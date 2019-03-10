@@ -12,14 +12,14 @@ spring:
       enabled: false
   webflux:
     static-path-pattern: /static/**
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-          include-expression: serviceId.endsWith('-UI')
-          url-expression: "'lb:http://'+serviceId"
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+#          include-expression: serviceId.endsWith('-UI')
+#          url-expression: "'lb:http://'+serviceId"
 
 logging:
   level:

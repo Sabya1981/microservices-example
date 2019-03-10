@@ -26,6 +26,13 @@ class RoutesConfig {
             }
             uri("lb:http://eureka-server")
         }
+        route("items-ui") {
+            path("/items-ui/**")
+            filters {
+                rewritePath("/items-ui/(?<segment>.*)", "/\${segment}")
+            }
+            uri("http://localhost:8081")
+        }
         route("eureka-internals") {
             path("/eureka/**")
             uri("lb:http://eureka-server")

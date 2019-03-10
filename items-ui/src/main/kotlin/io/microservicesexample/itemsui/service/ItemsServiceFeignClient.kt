@@ -8,7 +8,11 @@ import org.springframework.stereotype.Component
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 
-@FeignClient("items-service", fallbackFactory = ItemsServiceFeignClient.ItemsServiceFeignClientFallbackFactory::class)
+@FeignClient(
+    name = "123",
+    url = "http://localhost:8080",
+    fallbackFactory = ItemsServiceFeignClient.ItemsServiceFeignClientFallbackFactory::class
+)
 interface ItemsServiceFeignClient {
 
     @GetMapping("/items/{id}")
